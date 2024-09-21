@@ -16,8 +16,9 @@ interface WeeklySummaryProps {
 }
 
 export function WeeklySummary({ summary }: WeeklySummaryProps) {
-  const fromDate = dayjs().startOf('week').format('D[ de ]MMM')
-  const toDate = dayjs().endOf('week').format('D[ de ]MMM')
+  const fromDate = dayjs().startOf('week').format('D')
+  const toDate = dayjs().endOf('week').format('D')
+  const currentMonth = dayjs().endOf('week').format('MMMM')
 
   const completedPercentage = Math.round(
     (summary.completed * 100) / summary.total
@@ -30,7 +31,7 @@ export function WeeklySummary({ summary }: WeeklySummaryProps) {
         <div className="flex items-center gap-3">
           <InOrbitIcon />
           <span className="text-lg font-semibold">
-            {fromDate} - {toDate}
+            {fromDate} a {toDate} de {currentMonth}
           </span>
         </div>
 
@@ -77,7 +78,7 @@ export function WeeklySummary({ summary }: WeeklySummaryProps) {
         <div className="flex items-center gap-3">
           <InOrbitIcon />
           <span className="text-lg font-semibold">
-            {fromDate} - {toDate}
+            {fromDate} a {toDate} de <span className='capitalize'>{currentMonth}</span>
           </span>
         </div>
 
