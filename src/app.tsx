@@ -5,7 +5,6 @@ import { useQuery } from '@tanstack/react-query'
 import { getSummary } from './http/get-summary'
 import { Loader2 } from 'lucide-react'
 import { EmptyGoals } from './components/empty-goals'
-import { EmptyGoalCompletion } from './components/empty-goals-completion'
 
 export function App() {
   const { data, isLoading } = useQuery({
