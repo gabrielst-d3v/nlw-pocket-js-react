@@ -115,13 +115,14 @@ export function WeeklySummary({ summary }: WeeklySummaryProps) {
 
         {Object.entries(summary.goalsPerDay).map(([date, goals]) => {
           const weekDay = dayjs(date).format('dddd')
-          const parsedDate = dayjs(date).format('D[ de ]MMM')
-
+          const dayWeek = dayjs(date).format('DD')
+          const monthWeek = dayjs(date).format('MMM')
+          
           return (
             <div className="space-y-4" key={date}>
-              <h3 className="font-medium capitalize">
+              <h3 className="font-medium">
                 {weekDay}{' '}
-                <span className="text-zinc-400 text-xs">({parsedDate})</span>
+                <span className="text-zinc-400 text-xs">({dayWeek} de <span className='capitalize'>{monthWeek}</span>)</span>
               </h3>
 
               <ul className="space-y-3">
