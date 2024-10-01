@@ -121,7 +121,7 @@ export function WeeklySummary({ summary }: WeeklySummaryProps) {
           return (
             <div className="space-y-4" key={date}>
               <h3 className="font-medium">
-                {weekDay}{' '}
+                <span className='capitalize'>{weekDay}{' '}</span>
                 <span className="text-zinc-400 text-xs">({dayWeek} de <span className='capitalize'>{monthWeek}</span>)</span>
               </h3>
 
